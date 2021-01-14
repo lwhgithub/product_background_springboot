@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+	例如namespace="com.szh.mapper.personMapper"就是com.szh.mapper(包名)+personMapper(personMapper.xml文件去除后缀) -->
+<!--        keyProperty="id" useGeneratedKeys="true"   添加后返回id-->
+<mapper namespace="com.fh.product.property.mapper.PropertyMapper">
+
+    <select id="getData" parameterType="com.fh.product.property.model.Property" resultType="com.fh.product.property.model.Property">
+        select * from product_property where propertyisDel=1 order by propertyid desc limit #{pagingStart},#{pagingSize};
+<!--        <include refid="sql"></include>-->
+    </select>
+    <select id="getDatacount" parameterType="com.fh.product.property.model.Property" resultType="long">
+        select count(*) from product_property where propertyisDel=1;
+
+    </select>
+<!--    <insert id="add" parameterType="com.fh.product.property.model.Property" >-->
+<!--        insert into product_property (propertyname,propertynameCH,propertytypeId,propertytype,propertyisSKU,propertyisDel,propertycreateDate,propertyauthor)-->
+<!--                            values (#{propertyname},#{propertynameCH},#{propertytypeId},#{propertytype},#{propertyisSKU},#{propertyisDel},#{propertycreateDate},#{propertyauthor});-->
+<!--    </insert>-->
+<!--    <update id="update" parameterType="com.fh.product.brand.model.Brand" >-->
+<!--        update product_brand set brandname=#{brandname},brandE=#{brandE},brandimgpath=#{brandimgpath},brandDesc=#{brandDesc},brandord=#{brandord},brandisdel=#{brandisdel},brandupdateDate=#{brandupdateDate},brandauthor=#{brandauthor}-->
+<!--        where brandid=#{brandid}-->
+<!--    </update>-->
+<!--    <sql id="sql">-->
+<!--        <where>-->
+<!--                <if test="brandname!='' and brandname!=null ">-->
+<!--                    probr.brandname like concat('%',#{brandname},'%')-->
+<!--                </if>-->
+<!--                <if test="brandisdel !=''">-->
+<!--                  and  probr.brandisdel=1-->
+<!--                </if>-->
+<!--        </where>-->
+<!--    </sql>-->
+
+
+</mapper>
