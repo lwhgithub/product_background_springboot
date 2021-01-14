@@ -10,5 +10,5 @@ import com.fh.product.property.model.Property;
 public interface PropertyService {
     ServerResponse getDate(Property property);
 
-//    ServerResponse add(Property property);
+    ServerResponse add(Property property);
 }

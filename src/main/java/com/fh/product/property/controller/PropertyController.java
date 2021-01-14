@@ -28,10 +28,10 @@ public class PropertyController {
     public ServerResponse getDate(Property property){
         return propertyService.getDate(property);
     }
-//    @PostMapping("add")
-//    public ServerResponse add(Property property){
-//        return propertyService.add(property);
-//    }
+    @PostMapping("add")
+    public ServerResponse add(Property property){
+        return propertyService.add(property);
+    }
 
 
 

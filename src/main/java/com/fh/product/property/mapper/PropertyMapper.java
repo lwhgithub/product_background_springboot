@@ -13,5 +13,5 @@ public interface PropertyMapper {
 
     long getDatacount(Property property);
 
-//    void add(Property property);
+    void add(Property property);
 }

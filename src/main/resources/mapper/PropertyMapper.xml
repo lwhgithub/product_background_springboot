@@ -13,10 +13,10 @@
         select count(*) from product_property where propertyisDel=1;
 
     </select>
-<!--    <insert id="add" parameterType="com.fh.product.property.model.Property" >-->
-<!--        insert into product_property (propertyname,propertynameCH,propertytypeId,propertytype,propertyisSKU,propertyisDel,propertycreateDate,propertyauthor)-->
-<!--                            values (#{propertyname},#{propertynameCH},#{propertytypeId},#{propertytype},#{propertyisSKU},#{propertyisDel},#{propertycreateDate},#{propertyauthor});-->
-<!--    </insert>-->
+    <insert id="add" parameterType="com.fh.product.property.model.Property" >
+        insert into product_property (propertyname,propertynameCH,propertytypeId,propertytype,propertyisSKU,propertyisDel,propertycreateDate,propertyauthor)
+                            values (#{propertyname},#{propertynameCH},#{propertytypeId},#{propertytype},#{propertyisSKU},#{propertyisDel},#{propertycreateDate},#{propertyauthor});
+    </insert>
 <!--    <update id="update" parameterType="com.fh.product.brand.model.Brand" >-->
 <!--        update product_brand set brandname=#{brandname},brandE=#{brandE},brandimgpath=#{brandimgpath},brandDesc=#{brandDesc},brandord=#{brandord},brandisdel=#{brandisdel},brandupdateDate=#{brandupdateDate},brandauthor=#{brandauthor}-->
 <!--        where brandid=#{brandid}-->

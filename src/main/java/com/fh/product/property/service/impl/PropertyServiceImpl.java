@@ -32,12 +32,12 @@ public class PropertyServiceImpl implements PropertyService {
         return ServerResponse.success(map);
     }
 
-//    @Override
-//    public ServerResponse add(Property property) {
-//        property.setPropertycreateDate(new Date());
-//        property.setPropertyauthor("admin");
-//        property.setPropertyisDel(1);
-//        propertyMapper.add(property);
-//        return ServerResponse.success();
-//    }
+    @Override
+    public ServerResponse add(Property property) {
+        property.setPropertycreateDate(new Date());
+        property.setPropertyauthor("admin");
+        property.setPropertyisDel(1);
+        propertyMapper.add(property);
+        return ServerResponse.success();
+    }
 }
