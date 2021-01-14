@@ -16,6 +16,10 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("api/brand/")
 public class BrandController {
+
+
+
+
     @Resource
     private BrandService brandService;
 //      http://192.168.2.1:8111/api/brand/getData
