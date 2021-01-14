@@ -11,4 +11,6 @@ public interface PropertyService {
     ServerResponse getDate(Property property);
 
     ServerResponse add(Property property);
+
+    ServerResponse update(Property property);
 }

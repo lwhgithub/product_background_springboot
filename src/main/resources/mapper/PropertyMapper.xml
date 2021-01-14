@@ -17,10 +17,10 @@
         insert into product_property (propertyname,propertynameCH,propertytypeId,propertytype,propertyisSKU,propertyisDel,propertycreateDate,propertyauthor)
                             values (#{propertyname},#{propertynameCH},#{propertytypeId},#{propertytype},#{propertyisSKU},#{propertyisDel},#{propertycreateDate},#{propertyauthor});
     </insert>
-<!--    <update id="update" parameterType="com.fh.product.brand.model.Brand" >-->
-<!--        update product_brand set brandname=#{brandname},brandE=#{brandE},brandimgpath=#{brandimgpath},brandDesc=#{brandDesc},brandord=#{brandord},brandisdel=#{brandisdel},brandupdateDate=#{brandupdateDate},brandauthor=#{brandauthor}-->
-<!--        where brandid=#{brandid}-->
-<!--    </update>-->
+    <update id="update" parameterType="com.fh.product.property.model.Property" >
+        update product_property set propertyname=#{propertyname},propertynameCH=#{propertynameCH},propertytypeId=#{propertytypeId},propertytype=#{propertytype},propertyisSKU=#{propertyisSKU},propertyisDel=#{propertyisDel},propertyupdateDate=#{propertyupdateDate},propertyauthor=#{propertyauthor}
+        where propertyid=#{propertyid}
+    </update>
 <!--    <sql id="sql">-->
 <!--        <where>-->
 <!--                <if test="brandname!='' and brandname!=null ">-->

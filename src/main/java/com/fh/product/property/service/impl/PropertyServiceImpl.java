@@ -40,4 +40,11 @@ public class PropertyServiceImpl implements PropertyService {
         propertyMapper.add(property);
         return ServerResponse.success();
     }
+
+    @Override
+    public ServerResponse update(Property property) {
+        property.setPropertyupdateDate(new Date());
+        propertyMapper.update(property);
+        return ServerResponse.success();
+    }
 }

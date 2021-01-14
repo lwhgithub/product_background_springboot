@@ -4,10 +4,7 @@ import com.fh.common.ServerResponse;
 import com.fh.product.property.model.Property;
 import com.fh.product.property.service.PropertyService;
 import org.apache.catalina.Server;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -31,6 +28,10 @@ public class PropertyController {
     @PostMapping("add")
     public ServerResponse add(Property property){
         return propertyService.add(property);
+    }
+    @PutMapping("update")
+    public ServerResponse update(Property property){
+        return propertyService.update(property);
     }
 
 
