@@ -16,10 +16,6 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("api/brand/")
 public class BrandController {
-
-
-
-//我范围分为个味儿噶喏个
     @Resource
     private BrandService brandService;
 //      http://192.168.2.1:8111/api/brand/getData
