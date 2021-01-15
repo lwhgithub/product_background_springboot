@@ -13,4 +13,6 @@ public interface PropertyService {
     ServerResponse add(Property property);
 
     ServerResponse update(Property property);
+
+    ServerResponse delete(Integer propertyid);
 }

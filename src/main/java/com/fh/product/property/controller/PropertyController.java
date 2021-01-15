@@ -33,7 +33,10 @@ public class PropertyController {
     public ServerResponse update(Property property){
         return propertyService.update(property);
     }
-
+    @DeleteMapping("delete")
+    public ServerResponse delete(Integer propertyid){
+        return propertyService.delete(propertyid);
+    }
 
 
 

@@ -16,4 +16,6 @@ public interface PropertyMapper {
     void add(Property property);
 
     void update(Property property);
+
+    void delete(Integer propertyid);
 }

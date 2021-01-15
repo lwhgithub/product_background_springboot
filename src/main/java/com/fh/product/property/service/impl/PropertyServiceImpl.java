@@ -47,4 +47,10 @@ public class PropertyServiceImpl implements PropertyService {
         propertyMapper.update(property);
         return ServerResponse.success();
     }
+
+    @Override
+    public ServerResponse delete(Integer propertyid) {
+        propertyMapper.delete(propertyid);
+        return ServerResponse.success();
+    }
 }
