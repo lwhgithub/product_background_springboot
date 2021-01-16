@@ -1,7 +1,7 @@
 package com.fh.product.property.service.impl;
 
 import com.fh.common.ServerResponse;
-import com.fh.product.category.model.Category;
+
 import com.fh.product.property.mapper.PropertyMapper;
 import com.fh.product.property.model.Property;
 import com.fh.product.property.model.PropertyCategory;
