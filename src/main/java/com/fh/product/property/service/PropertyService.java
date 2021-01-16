@@ -15,4 +15,6 @@ public interface PropertyService {
     ServerResponse update(Property property);
 
     ServerResponse delete(Integer propertyid);
+
+    ServerResponse getPropertyCategory();
 }

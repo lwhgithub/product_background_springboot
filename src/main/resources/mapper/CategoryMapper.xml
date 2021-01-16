@@ -10,9 +10,6 @@
     <select id="queryProductCategoryPid" parameterType="int" resultType="com.fh.product.category.model.Category">
         select * from product_category where isDel=1 and pid=#{pid};
     </select>
-    <select id="getPropertyCategory" resultType="com.fh.product.category.model.Category">
-        select * from product_category
-    </select>
     <insert id="addProductCategory" parameterType="com.fh.product.category.model.Category" keyProperty="id" useGeneratedKeys="true" >
         insert into product_category (name,pid,createDate)
                             values (#{name},#{pid},#{createDate});

@@ -37,7 +37,10 @@ public class PropertyController {
     public ServerResponse delete(Integer propertyid){
         return propertyService.delete(propertyid);
     }
-
+    @GetMapping("getPropertyCategory")
+    public ServerResponse getPropertyCategory(){
+        return propertyService.getPropertyCategory();
+    }
 
 
 }

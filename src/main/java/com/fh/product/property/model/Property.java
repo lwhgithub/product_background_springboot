@@ -25,12 +25,12 @@ public class Property {
     private Date propertyupdateDate;//
     private String propertyauthor;// 操作人
 
-    private Integer id;
-    private String name;
-    private Integer pid;
-
+//
     private long pagingStart=0;
     private long pagingSize=10;
+
+    private Integer id;
+    private String property_category_name;
 
     public Integer getId() {
         return id;
@@ -40,20 +40,12 @@ public class Property {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getProperty_category_name() {
+        return property_category_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getPid() {
-        return pid;
-    }
-
-    public void setPid(Integer pid) {
-        this.pid = pid;
+    public void setProperty_category_name(String property_category_name) {
+        this.property_category_name = property_category_name;
     }
 
     public Integer getPropertyid() {

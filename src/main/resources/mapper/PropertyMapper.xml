@@ -6,13 +6,16 @@
 <mapper namespace="com.fh.product.property.mapper.PropertyMapper">
 
     <select id="getData" parameterType="com.fh.product.property.model.Property" resultType="com.fh.product.property.model.Property">
-        select * from product_property propro left join product_category procat on propro.propertytypeId=procat.id
+        select * from product_property propro left join product_property_category proprocat on propro.propertytypeId=proprocat.id
          where propertyisDel=1 order by propertyid desc limit #{pagingStart},#{pagingSize};
 <!--        <include refid="sql"></include>-->
     </select>
     <select id="getDatacount" parameterType="com.fh.product.property.model.Property" resultType="long">
         select count(*) from product_property where propertyisDel=1;
 
+    </select>
+    <select id="getPropertyCategory" resultType="com.fh.product.property.model.PropertyCategory">
+        select * from product_property_category
     </select>
     <insert id="add" parameterType="com.fh.product.property.model.Property" >
         insert into product_property (propertyname,propertynameCH,propertytypeId,propertytype,propertyisSKU,propertyisDel,propertycreateDate,propertyauthor)
