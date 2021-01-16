@@ -1,5 +1,6 @@
 package com.fh.product.category.mapper;
 
+import com.fh.common.ServerResponse;
 import com.fh.product.category.model.Category;
 
 import java.util.List;
@@ -21,4 +22,5 @@ public interface CategoryMapper {
 
     void updateProductCategoryson(Category category);
 
+    List<Category> getPropertyCategory();
 }

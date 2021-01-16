@@ -64,7 +64,11 @@ public class CategoryServerImpl implements CategoryServer {
         return ServerResponse.success(categorylist);
     }
 
-
+    @Override
+    public ServerResponse getPropertyCategory() {
+        List<Category> categoryList = categoryMapper.getPropertyCategory();
+        return ServerResponse.success(categoryList);
+    }
 
 
     private void getztrraList(List<Map<String,Object>> allList,List<Map<String,Object>> parentList){

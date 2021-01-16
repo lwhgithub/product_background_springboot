@@ -6,7 +6,8 @@
 <mapper namespace="com.fh.product.property.mapper.PropertyMapper">
 
     <select id="getData" parameterType="com.fh.product.property.model.Property" resultType="com.fh.product.property.model.Property">
-        select * from product_property where propertyisDel=1 order by propertyid desc limit #{pagingStart},#{pagingSize};
+        select * from product_property propro left join product_category procat on propro.propertytypeId=procat.id
+         where propertyisDel=1 order by propertyid desc limit #{pagingStart},#{pagingSize};
 <!--        <include refid="sql"></include>-->
     </select>
     <select id="getDatacount" parameterType="com.fh.product.property.model.Property" resultType="long">

@@ -34,6 +34,9 @@ public class CategoryController {
     public ServerResponse updateProductCategory(Category category){
         return categoryServer.updateProductCategory(category);
     }
-
+    @GetMapping("getPropertyCategory")
+    public ServerResponse getPropertyCategory(){
+        return categoryServer.getPropertyCategory();
+    }
 
 }

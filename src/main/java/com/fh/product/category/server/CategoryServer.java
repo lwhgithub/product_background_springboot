@@ -16,4 +16,5 @@ public interface CategoryServer {
 
     ServerResponse queryProductCategoryPid(Integer pid);
 
+    ServerResponse getPropertyCategory();
 }

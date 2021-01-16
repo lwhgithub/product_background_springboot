@@ -25,8 +25,36 @@ public class Property {
     private Date propertyupdateDate;//
     private String propertyauthor;// 操作人
 
+    private Integer id;
+    private String name;
+    private Integer pid;
+
     private long pagingStart=0;
     private long pagingSize=10;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getPid() {
+        return pid;
+    }
+
+    public void setPid(Integer pid) {
+        this.pid = pid;
+    }
 
     public Integer getPropertyid() {
         return propertyid;
