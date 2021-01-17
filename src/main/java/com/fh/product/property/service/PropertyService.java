@@ -17,4 +17,6 @@ public interface PropertyService {
     ServerResponse delete(Integer propertyid);
 
     ServerResponse getPropertyCategory();
+
+    ServerResponse getPropertyPrice(Integer propertyid);
 }

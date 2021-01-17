@@ -18,6 +18,11 @@
     <select id="getPropertyCategory" resultType="com.fh.product.property.model.PropertyCategory">
         select * from product_property_category
     </select>
+    <select id="getPropertyPrice" parameterType="int" resultType="com.fh.product.property.model.PropertyPrice">
+        select * from t_property_price propri left join product_property propro on propri.propertyId=propro.propertyid
+        where propri.propertyId=#{propertyid};
+    </select>
+
     <insert id="add" parameterType="com.fh.product.property.model.Property" >
         insert into product_property (propertyname,propertynameCH,propertytypeId,propertytype,propertyisSKU,propertyisDel,propertycreateDate,propertyauthor)
                             values (#{propertyname},#{propertynameCH},#{propertytypeId},#{propertytype},#{propertyisSKU},#{propertyisDel},#{propertycreateDate},#{propertyauthor});
@@ -26,9 +31,7 @@
         update product_property set propertyname=#{propertyname},propertynameCH=#{propertynameCH},propertytypeId=#{propertytypeId},propertytype=#{propertytype},propertyisSKU=#{propertyisSKU},propertyisDel=#{propertyisDel},propertyupdateDate=#{propertyupdateDate},propertyauthor=#{propertyauthor}
         where propertyid=#{propertyid}
     </update>
-<!--    <delete id="delete" parameterType="int">-->
-<!--        delete from product_property where propertyid=#{propertyid}-->
-<!--    </delete>-->
+
     <update id="delete" parameterType="int">
         update product_property set propertyisDel = 2 where propertyid=#{propertyid};
     </update>

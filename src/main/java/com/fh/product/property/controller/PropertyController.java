@@ -41,6 +41,12 @@ public class PropertyController {
     public ServerResponse getPropertyCategory(){
         return propertyService.getPropertyCategory();
     }
-
-
+//      http://192.168.2.1:8111/api/property/getPropertyPrice
+//      get
+//      必须参数  propertyid  integer类型
+//      返回json
+    @GetMapping("getPropertyPrice")
+    public ServerResponse getPropertyPrice(Integer propertyid){
+        return propertyService.getPropertyPrice(propertyid);
+    }
 }
