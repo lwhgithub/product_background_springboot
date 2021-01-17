@@ -45,8 +45,10 @@ public class BrandServiceImpl implements BrandService {
     public ServerResponse update(Brand brand) {
         brand.setBrandauthor("admin");
         brand.setBrandupdateDate(new Date());
-        if (StringUtils.isNoneBlank(brand.getNewbrandimgpath())){
-            OssUtil.deleteFile(brand.getBrandimgpath());
+        if (StringUtils.isNotBlank(brand.getNewbrandimgpath())){
+            if(StringUtils.isNotBlank(brand.getBrandimgpath())){
+                OssUtil.deleteFile(brand.getBrandimgpath());
+            }
             brand.setBrandimgpath(brand.getNewbrandimgpath());
         }
         brandMapper.update(brand);
