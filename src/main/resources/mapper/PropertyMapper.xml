@@ -7,8 +7,9 @@
 
     <select id="getData" parameterType="com.fh.product.property.model.Property" resultType="com.fh.product.property.model.Property">
         select * from product_property propro left join product_property_category proprocat on propro.propertytypeId=proprocat.id
-         where propertyisDel=1 order by propertyid desc limit #{pagingStart},#{pagingSize};
-<!--        <include refid="sql"></include>-->
+        <include refid="sql"></include>
+        order by propertyid desc limit #{pagingStart},#{pagingSize};
+
     </select>
     <select id="getDatacount" parameterType="com.fh.product.property.model.Property" resultType="long">
         select count(*) from product_property where propertyisDel=1;
@@ -31,16 +32,25 @@
     <update id="delete" parameterType="int">
         update product_property set propertyisDel = 2 where propertyid=#{propertyid};
     </update>
-<!--    <sql id="sql">-->
-<!--        <where>-->
-<!--                <if test="brandname!='' and brandname!=null ">-->
-<!--                    probr.brandname like concat('%',#{brandname},'%')-->
-<!--                </if>-->
-<!--                <if test="brandisdel !=''">-->
-<!--                  and  probr.brandisdel=1-->
-<!--                </if>-->
-<!--        </where>-->
-<!--    </sql>-->
+    <sql id="sql">
+        <where>
+            <if test="propertyisDel !=''">
+                and propro.propertyisDel=1
+            </if>
+            <if test="propertynameCH!='' and propertynameCH!=null ">
+                and propro.propertynameCH like concat('%',#{propertynameCH},'%')
+            </if>
+            <if test="propertytypeId!='' and propertytypeId!=null ">
+                and propro.propertytypeId =#{propertytypeId}
+            </if>
+            <if test="propertyisSKU!='' and propertyisSKU!=null ">
+                and propro.propertyisSKU =#{propertyisSKU}
+            </if>
+            <if test="propertytype!='' and propertytype!=null ">
+                and propro.propertytype =#{propertytype}
+            </if>
+        </where>
+    </sql>
 
 
 </mapper>
