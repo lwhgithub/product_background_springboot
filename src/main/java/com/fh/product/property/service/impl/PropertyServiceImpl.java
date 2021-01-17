@@ -67,4 +67,11 @@ public class PropertyServiceImpl implements PropertyService {
         List<PropertyPrice> propertyPriceList=propertyMapper.getPropertyPrice(propertyid);
         return ServerResponse.success(propertyPriceList);
     }
+
+    @Override
+    public ServerResponse addPrice(PropertyPrice propertyPrice) {
+        propertyPrice.setPropertyPriceisDel(1);
+        propertyMapper.addPrice(propertyPrice);
+        return ServerResponse.success();
+    }
 }

@@ -2,6 +2,7 @@ package com.fh.product.property.controller;
 
 import com.fh.common.ServerResponse;
 import com.fh.product.property.model.Property;
+import com.fh.product.property.model.PropertyPrice;
 import com.fh.product.property.service.PropertyService;
 import org.apache.catalina.Server;
 import org.springframework.web.bind.annotation.*;
@@ -49,4 +50,10 @@ public class PropertyController {
     public ServerResponse getPropertyPrice(Integer propertyid){
         return propertyService.getPropertyPrice(propertyid);
     }
+    @PostMapping("addPrice")
+    public ServerResponse addPriceForm(PropertyPrice propertyPrice){
+        return propertyService.addPrice(propertyPrice);
+    }
+
+
 }

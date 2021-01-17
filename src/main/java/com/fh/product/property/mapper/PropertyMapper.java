@@ -24,4 +24,6 @@ public interface PropertyMapper {
     List<PropertyCategory> getPropertyCategory();
 
     List<PropertyPrice> getPropertyPrice(Integer propertyid);
+
+    void addPrice(PropertyPrice propertyPrice);
 }

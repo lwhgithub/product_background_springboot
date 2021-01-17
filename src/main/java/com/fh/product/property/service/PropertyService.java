@@ -2,6 +2,7 @@ package com.fh.product.property.service;
 
 import com.fh.common.ServerResponse;
 import com.fh.product.property.model.Property;
+import com.fh.product.property.model.PropertyPrice;
 
 /**
  * 生产地址: FLYFOX第五号BUG工厂第二分厂三十三号生产员
@@ -19,4 +20,6 @@ public interface PropertyService {
     ServerResponse getPropertyCategory();
 
     ServerResponse getPropertyPrice(Integer propertyid);
+
+    ServerResponse addPrice(PropertyPrice propertyPrice);
 }
