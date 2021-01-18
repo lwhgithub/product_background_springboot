@@ -12,7 +12,7 @@
 
     </select>
     <select id="getDatacount" parameterType="com.fh.product.property.model.Property" resultType="long">
-        select count(*) from product_property where propertyisDel=1;
+        select count(*) from product_property propro <include refid="sql"></include>;
 
     </select>
     <select id="getPropertyCategory" resultType="com.fh.product.property.model.PropertyCategory">
@@ -20,7 +20,7 @@
     </select>
     <select id="getPropertyPrice" parameterType="int" resultType="com.fh.product.property.model.PropertyPrice">
         select * from t_property_price propri left join product_property propro on propri.propertyId=propro.propertyid
-        where propri.propertyId=#{propertyid};
+        where propri.propertyId=#{propertyid} and propri.propertyPriceisDel=1;
     </select>
 
     <insert id="add" parameterType="com.fh.product.property.model.Property" >
