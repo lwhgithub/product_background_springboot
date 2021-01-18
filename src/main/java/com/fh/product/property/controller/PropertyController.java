@@ -38,10 +38,7 @@ public class PropertyController {
     public ServerResponse delete(Integer propertyid){
         return propertyService.delete(propertyid);
     }
-    @GetMapping("getPropertyCategory")
-    public ServerResponse getPropertyCategory(){
-        return propertyService.getPropertyCategory();
-    }
+
 //      http://192.168.2.1:8111/api/property/getPropertyPrice
 //      get
 //      必须参数  propertyid  integer类型

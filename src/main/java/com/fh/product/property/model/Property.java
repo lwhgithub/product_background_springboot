@@ -29,23 +29,14 @@ public class Property {
     private long pagingStart=0;
     private long pagingSize=10;
 
-    private Integer id;
-    private String property_category_name;
+    private String name;
 
-    public Integer getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getProperty_category_name() {
-        return property_category_name;
-    }
-
-    public void setProperty_category_name(String property_category_name) {
-        this.property_category_name = property_category_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getPropertyid() {

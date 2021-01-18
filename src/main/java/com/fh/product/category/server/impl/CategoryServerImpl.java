@@ -37,8 +37,6 @@ public class CategoryServerImpl implements CategoryServer {
         return ServerResponse.success(parentList);
     }
 
-
-
     @Override
     public ServerResponse addProductCategory(Category category) {
         category.setCreateDate(new Date());
@@ -64,7 +62,11 @@ public class CategoryServerImpl implements CategoryServer {
         return ServerResponse.success(categorylist);
     }
 
-
+    @Override
+    public ServerResponse getDataList() {
+        List<Category> categoryList = categoryMapper.getDataList();
+        return ServerResponse.success(categoryList);
+    }
 
 
     private void getztrraList(List<Map<String,Object>> allList,List<Map<String,Object>> parentList){

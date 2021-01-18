@@ -21,4 +21,6 @@ public interface CategoryMapper {
     List<Category> queryProductCategoryPid(Integer pid);
 
     void updateProductCategoryson(Category category);
+
+    List<Category> getDataList();
 }

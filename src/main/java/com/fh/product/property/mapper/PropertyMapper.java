@@ -1,7 +1,6 @@
 package com.fh.product.property.mapper;
 
 import com.fh.product.property.model.Property;
-import com.fh.product.property.model.PropertyCategory;
 import com.fh.product.property.model.PropertyPrice;
 
 import java.util.List;
@@ -20,8 +19,6 @@ public interface PropertyMapper {
     void update(Property property);
 
     void delete(Integer propertyid);
-
-    List<PropertyCategory> getPropertyCategory();
 
     List<PropertyPrice> getPropertyPrice(Integer propertyid);
 

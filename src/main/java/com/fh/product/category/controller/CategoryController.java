@@ -26,6 +26,10 @@ public class CategoryController {
     public ServerResponse queryProductCategoryPid(Integer pid){
         return categoryServer.queryProductCategoryPid(pid);
     }
+    @GetMapping("getDataList")
+    public ServerResponse getDataList(){
+        return categoryServer.getDataList();
+    }
     @PostMapping("add")
     public ServerResponse addProductCategory(Category category){
         return categoryServer.addProductCategory(category);

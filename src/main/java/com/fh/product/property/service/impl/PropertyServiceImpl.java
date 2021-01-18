@@ -4,7 +4,6 @@ import com.fh.common.ServerResponse;
 
 import com.fh.product.property.mapper.PropertyMapper;
 import com.fh.product.property.model.Property;
-import com.fh.product.property.model.PropertyCategory;
 import com.fh.product.property.model.PropertyPrice;
 import com.fh.product.property.service.PropertyService;
 import org.springframework.stereotype.Service;
@@ -55,11 +54,6 @@ public class PropertyServiceImpl implements PropertyService {
     public ServerResponse delete(Integer propertyid) {
         propertyMapper.delete(propertyid);
         return ServerResponse.success();
-    }
-    @Override
-    public ServerResponse getPropertyCategory() {
-        List<PropertyCategory> propertyCategoryList = propertyMapper.getPropertyCategory();
-        return ServerResponse.success(propertyCategoryList);
     }
 
     @Override
