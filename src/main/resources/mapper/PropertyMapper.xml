@@ -39,6 +39,11 @@
     <update id="delete" parameterType="int">
         update product_property set propertyisDel = 2 where propertyid=#{propertyid};
     </update>
+    <update id="updatePrice" parameterType="com.fh.product.property.model.PropertyPrice">
+        update t_property_price set propertyPriceName=#{propertyPriceName},propertyPriceNameCH=#{propertyPriceNameCH},propertyId=#{propertyId},
+        propertyPriceisDel=#{propertyPriceisDel}
+        where propertyPriceId=#{propertyPriceId}
+    </update>
     <sql id="sql">
         <where>
             <if test="propertyisDel !=''">

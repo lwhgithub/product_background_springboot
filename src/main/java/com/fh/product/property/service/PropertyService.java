@@ -22,4 +22,6 @@ public interface PropertyService {
     ServerResponse getPropertyPrice(Integer propertyid);
 
     ServerResponse addPrice(PropertyPrice propertyPrice);
+
+    ServerResponse updatePrice(PropertyPrice propertyPrice);
 }

@@ -74,4 +74,10 @@ public class PropertyServiceImpl implements PropertyService {
         propertyMapper.addPrice(propertyPrice);
         return ServerResponse.success();
     }
+
+    @Override
+    public ServerResponse updatePrice(PropertyPrice propertyPrice) {
+        propertyMapper.updatePrice(propertyPrice);
+        return ServerResponse.success();
+    }
 }

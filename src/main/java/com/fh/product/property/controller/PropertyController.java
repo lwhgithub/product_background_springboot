@@ -54,6 +54,10 @@ public class PropertyController {
     public ServerResponse addPriceForm(PropertyPrice propertyPrice){
         return propertyService.addPrice(propertyPrice);
     }
+    @PutMapping("updatePrice")
+    public ServerResponse updatePrice(PropertyPrice propertyPrice){
+        return propertyService.updatePrice(propertyPrice);
+    }
 
 
 }
