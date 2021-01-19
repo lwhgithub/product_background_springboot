@@ -14,7 +14,7 @@ public class Property {
     private String propertyname;//  属性名   color
     private String propertynameCH;//  属性中文名   颜色
     private Integer propertytypeId;//   分类的主键
-    private Integer propertytype;//     属性的类型    0 下拉框     1 单选框      2  复选框   3  输入框
+    private Integer propertytype;//     属性的类型    1 下拉框     2单选框     3  复选框 4  输入框
     private Integer propertyisSKU;//  是否为sku属性
     private Integer propertyisDel;//   逻辑删除
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")

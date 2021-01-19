@@ -25,4 +25,6 @@ public interface PropertyMapper {
     void addPrice(PropertyPrice propertyPrice);
 
     void updatePrice(PropertyPrice propertyPrice);
+
+    List<Property> getPropertyDataByCategoryId(Integer propertytypeId);
 }

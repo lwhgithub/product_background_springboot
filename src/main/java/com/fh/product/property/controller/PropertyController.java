@@ -44,8 +44,8 @@ public class PropertyController {
 //      必须参数  propertyid  integer类型
 //      返回json
     @GetMapping("getPropertyPrice")
-    public ServerResponse getPropertyPrice(Integer propertyid){
-        return propertyService.getPropertyPrice(propertyid);
+    public ServerResponse getPropertyPrice(Integer propertyId){
+        return propertyService.getPropertyPrice(propertyId);
     }
     @PostMapping("addPrice")
     public ServerResponse addPriceForm(PropertyPrice propertyPrice){
@@ -56,5 +56,9 @@ public class PropertyController {
         return propertyService.updatePrice(propertyPrice);
     }
 
+    @GetMapping("getPropertyDataByCategoryId")
+    public ServerResponse getPropertyDataByCategoryId(Integer propertytypeId){
+        return propertyService.getPropertyDataByCategoryId(propertytypeId);
+    }
 
 }

@@ -17,9 +17,11 @@ public interface PropertyService {
 
     ServerResponse delete(Integer propertyid);
 
-    ServerResponse getPropertyPrice(Integer propertyid);
+    ServerResponse getPropertyPrice(Integer propertyId);
 
     ServerResponse addPrice(PropertyPrice propertyPrice);
 
     ServerResponse updatePrice(PropertyPrice propertyPrice);
+
+    ServerResponse getPropertyDataByCategoryId(Integer propertytypeId);
 }
