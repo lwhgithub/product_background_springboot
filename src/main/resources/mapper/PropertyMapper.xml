@@ -16,7 +16,7 @@
 
     </select>
     <select id="getPropertyPrice" parameterType="int" resultType="com.fh.product.property.model.PropertyPrice">
-        select * from t_property_price propri left join product_property propro on propri.propertyId=propro.propertyid
+        select * from property_price propri left join product_property propro on propri.propertyId=propro.propertyid
         where propri.propertyId=#{propertyId} and propri.propertyPriceisDel=1;
     </select>
     <select id="getPropertyDataByCategoryId" parameterType="int" resultType="com.fh.product.property.model.Property">
@@ -28,7 +28,7 @@
                             values (#{propertyname},#{propertynameCH},#{propertytypeId},#{propertytype},#{propertyisSKU},#{propertyisDel},#{propertycreateDate},#{propertyauthor});
     </insert>
     <insert id="addPrice" parameterType="com.fh.product.property.model.PropertyPrice">
-        insert into t_property_price (propertyPriceName,propertyPriceNameCH,propertyId,propertyPriceisDel)
+        insert into property_price (propertyPriceName,propertyPriceNameCH,propertyId,propertyPriceisDel)
                             values (#{propertyPriceName},#{propertyPriceNameCH},#{propertyId},#{propertyPriceisDel})
     </insert>
     <update id="update" parameterType="com.fh.product.property.model.Property" >
@@ -40,7 +40,7 @@
         update product_property set propertyisDel = 2 where propertyid=#{propertyid};
     </update>
     <update id="updatePrice" parameterType="com.fh.product.property.model.PropertyPrice">
-        update t_property_price set propertyPriceName=#{propertyPriceName},propertyPriceNameCH=#{propertyPriceNameCH},propertyId=#{propertyId},
+        update property_price set propertyPriceName=#{propertyPriceName},propertyPriceNameCH=#{propertyPriceNameCH},propertyId=#{propertyId},
         propertyPriceisDel=#{propertyPriceisDel}
         where propertyPriceId=#{propertyPriceId}
     </update>
