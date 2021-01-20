@@ -3,6 +3,7 @@ package com.fh.product.product.service.impl;
 import com.fh.common.ServerResponse;
 import com.fh.product.brand.model.Brand;
 import com.fh.product.product.mapper.ProductMapper;
+import com.fh.product.product.model.Product;
 import com.fh.product.product.service.ProductService;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,23 @@ public class ProductServiceImpl implements ProductService {
     public ServerResponse getProductBrandData() {
         List<Brand> productbrandlist= productMapper.getProductBrandData();
         return ServerResponse.success(productbrandlist);
+    }
+
+    @Override
+    public ServerResponse getProduct() {
+        List<Product> products= productMapper.getProduct();
+        return ServerResponse.success(products);
+    }
+
+    @Override
+    public ServerResponse addProduct(Product product) {
+        productMapper.addProduct(product);
+        return ServerResponse.success();
+    }
+
+    @Override
+    public ServerResponse updateProduct(Product product) {
+        productMapper.updateProduct(product);
+        return ServerResponse.success();
     }
 }

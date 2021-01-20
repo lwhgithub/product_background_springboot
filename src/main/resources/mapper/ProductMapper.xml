@@ -7,6 +7,21 @@
     <select id="getProductBrandData" resultType="com.fh.product.brand.model.Brand">
         select * from product_brand where brandisdel=1;
     </select>
-
+    <select id="getProduct" resultType="com.fh.product.product.model.Product">
+        select * from t_product where productIsDel = 1;
+    </select>
+    <insert id="addProduct" parameterType="com.fh.product.product.model.Product">
+        insert into from t_product (productName,productTitle,productBrandId,productTypeid,productDecs,productPrice,productStocks,productSortNum,productImgPath,productCreateDate,productUpdateDate,productAuthor,productIsDel)
+                        values (#{productName},#{productTitle},#{productBrandId},#{productTypeid},#{productDecs},#{productPrice},#{productStocks},#{productSortNum},#{productImgPath},#{productCreateDate},#{productUpdateDate},#{productAuthor},#{productIsDel})
+    </insert>
+    <update id="updateProduct" parameterType="com.fh.product.product.model.Product">
+        update t_product set
+            productName=#{productName},productTitle=#{productTitle},productBrandId=#{productBrandId},
+            productTypeid=#{productTypeid},productDecs=#{productDecs},productPrice=#{productPrice},
+            productStocks=#{productStocks},productSortNum=#{productSortNum},productImgPath=#{productImgPath},
+            productCreateDate=#{productCreateDate},productUpdateDate=#{productUpdateDate},
+            productAuthor=#{productAuthor},productIsDel=#{productIsDel}
+        where productId=#{productId}
+    </update>
 
 </mapper>

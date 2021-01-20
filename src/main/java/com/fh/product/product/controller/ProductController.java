@@ -1,10 +1,9 @@
 package com.fh.product.product.controller;
 
 import com.fh.common.ServerResponse;
+import com.fh.product.product.model.Product;
 import com.fh.product.product.service.ProductService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -22,4 +21,20 @@ public class ProductController {
     public ServerResponse getProductBrandData(){
         return productService.getProductBrandData();
     }
+
+//  查询商品
+    @GetMapping("getProduct")
+    public ServerResponse getProduct(){
+        return productService.getProduct();
+    }
+
+    @PostMapping("addProduct")
+    public ServerResponse addProduct(Product product){
+        return productService.addProduct(product);
+    }
+    @PutMapping("updateProduct")
+    public ServerResponse updateProduct(Product product){
+        return productService.updateProduct(product);
+    }
+
 }

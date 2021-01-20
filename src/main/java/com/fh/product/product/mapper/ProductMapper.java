@@ -1,6 +1,7 @@
 package com.fh.product.product.mapper;
 
 import com.fh.product.brand.model.Brand;
+import com.fh.product.product.model.Product;
 
 import java.util.List;
 
@@ -10,4 +11,10 @@ import java.util.List;
  */
 public interface ProductMapper {
     List<Brand> getProductBrandData();
+
+    List<Product> getProduct();
+
+    void addProduct(Product product);
+
+    void updateProduct(Product product);
 }
