@@ -21,6 +21,7 @@ public class Product {
     private Integer productStocks;//  库存
     private Integer productSortNum;//  排许
     private String productImgPath;//  图片
+    private String newproductImgPath;//  图片
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date productCreateDate;//
@@ -29,6 +30,74 @@ public class Product {
     private Date productUpdateDate;//
     private String productAuthor;//
     private Integer productIsDel;//  是否删除
+
+
+    private long pagingStart=0;
+    private long pagingSize=10;
+
+//  商品分类
+    private Integer id;
+    private String name;
+//  商品品牌
+    private Integer brandid;//  主键
+    private String brandname;//    名称
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getBrandid() {
+        return brandid;
+    }
+
+    public void setBrandid(Integer brandid) {
+        this.brandid = brandid;
+    }
+
+    public String getBrandname() {
+        return brandname;
+    }
+
+    public void setBrandname(String brandname) {
+        this.brandname = brandname;
+    }
+
+    public String getNewproductImgPath() {
+        return newproductImgPath;
+    }
+
+    public void setNewproductImgPath(String newproductImgPath) {
+        this.newproductImgPath = newproductImgPath;
+    }
+
+    public long getPagingStart() {
+        return pagingStart;
+    }
+
+    public void setPagingStart(long pagingStart) {
+        this.pagingStart = pagingStart;
+    }
+
+    public long getPagingSize() {
+        return pagingSize;
+    }
+
+    public void setPagingSize(long pagingSize) {
+        this.pagingSize = pagingSize;
+    }
 
     public Integer getProductId() {
         return productId;

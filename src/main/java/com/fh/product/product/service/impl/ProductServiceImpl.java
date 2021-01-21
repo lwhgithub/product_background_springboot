@@ -8,11 +8,14 @@ import com.fh.product.product.mapper.ProductMapper;
 import com.fh.product.product.model.Product;
 import com.fh.product.product.model.ProductPropertyPrice;
 import com.fh.product.product.service.ProductService;
+import com.fh.utils.OssUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -32,15 +35,27 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ServerResponse getProduct() {
-        List<Product> products= productMapper.getProduct();
-        return ServerResponse.success(products);
+    public ServerResponse getProductData(Product product) {
+        List<Product> products= productMapper.getProductData(product);
+        long count = productMapper.getProductCount(product);
+        HashMap<Object, Object> map = new HashMap<>();
+        map.put("Products",products);
+        map.put("count",count);
+        return ServerResponse.success(map);
     }
+
 
 
 
     @Override
     public ServerResponse updateProduct(Product product) {
+        product.setProductUpdateDate(new Date());
+        if (StringUtils.isNotBlank(product.getNewproductImgPath())){
+            if(StringUtils.isNotBlank(product.getProductImgPath())){
+                OssUtil.deleteFile(product.getProductImgPath());
+            }
+            product.setProductImgPath(product.getNewproductImgPath());
+        }
         productMapper.updateProduct(product);
         return ServerResponse.success();
     }

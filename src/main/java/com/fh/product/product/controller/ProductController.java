@@ -23,9 +23,9 @@ public class ProductController {
     }
 
 //  查询商品
-    @GetMapping("getProduct")
-    public ServerResponse getProduct(){
-        return productService.getProduct();
+    @GetMapping("getProductData")
+    public ServerResponse getProductData(Product product){
+        return productService.getProductData(product);
     }
 
     @PostMapping("addProduct")

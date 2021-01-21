@@ -10,11 +10,10 @@ import com.fh.product.product.model.Product;
 public interface ProductService {
     ServerResponse getProductBrandData();
 
-    ServerResponse getProduct();
-
-
+    ServerResponse getProductData(Product product);
 
     ServerResponse updateProduct(Product product);
 
     ServerResponse addProduct(Product product, String property, String sku);
+
 }

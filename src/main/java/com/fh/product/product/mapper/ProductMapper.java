@@ -14,7 +14,9 @@ import java.util.List;
 public interface ProductMapper {
     List<Brand> getProductBrandData();
 
-    List<Product> getProduct();
+    List<Product> getProductData(Product product);
+
+    long getProductCount(Product product);
 
     int addProduct(Product product);
 
@@ -22,4 +24,7 @@ public interface ProductMapper {
     @Insert("<script>insert into product_property_price (productId,productProperty,productStocks,productPrice) " +
             "values <foreach collection='list' item='a' separator=','> ( #{a.productId},#{a.productProperty},#{a.productStocks},#{a.productPrice} )  </foreach> </script>")
     void addProductProperty(List<ProductPropertyPrice> adList);
+
+
+
 }

@@ -7,8 +7,15 @@
     <select id="getProductBrandData" resultType="com.fh.product.brand.model.Brand">
         select * from product_brand where brandisdel=1;
     </select>
-    <select id="getProduct" resultType="com.fh.product.product.model.Product">
-        select * from t_product where productIsDel = 1;
+    <select id="getProductData" parameterType="com.fh.product.product.model.Product" resultType="com.fh.product.product.model.Product">
+        select * from t_product tp
+            left join product_brand pb on tp.productBrandId=pb.brandid
+            left join product_category pc on tp.productTypeId=pc.id
+            <include refid="sql"></include>
+            order by productId desc limit #{pagingStart},#{pagingSize};
+    </select>
+    <select id="getProductCount" parameterType="com.fh.product.product.model.Product" resultType="long">
+        select count(*) from t_product tp <include refid="sql"></include>;
     </select>
     <insert id="addProduct" parameterType="com.fh.product.product.model.Product" keyProperty="productId" useGeneratedKeys="true">
         insert into t_product (productName,productTitle,productBrandId,productTypeId,productDesc,productPrice,productStocks,productSortNum,productImgPath,productCreateDate,productUpdateDate,productAuthor,productIsDel)
@@ -17,11 +24,27 @@
     <update id="updateProduct" parameterType="com.fh.product.product.model.Product">
         update t_product set
             productName=#{productName},productTitle=#{productTitle},productBrandId=#{productBrandId},
-            productTypeid=#{productTypeid},productDecs=#{productDecs},productPrice=#{productPrice},
+            productTypeId=#{productTypeId},productDesc=#{productDesc},productPrice=#{productPrice},
             productStocks=#{productStocks},productSortNum=#{productSortNum},productImgPath=#{productImgPath},
             productCreateDate=#{productCreateDate},productUpdateDate=#{productUpdateDate},
             productAuthor=#{productAuthor},productIsDel=#{productIsDel}
         where productId=#{productId}
     </update>
 
+    <sql id="sql">
+        <where>
+            <if test="productIsDel !=''">
+                and tp.productIsDel=1
+            </if>
+            <if test="productName!='' and productName!=null ">
+                and tp.productName like concat('%',#{productName},'%')
+            </if>
+            <if test="productTypeId!='' and productTypeId!=null ">
+                and tp.productTypeId =#{productTypeId}
+            </if>
+            <if test="productBrandId!='' and productBrandId!=null ">
+                and tp.productBrandId =#{productBrandId}
+            </if>
+        </where>
+    </sql>
 </mapper>
