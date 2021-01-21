@@ -12,7 +12,9 @@ public interface ProductService {
 
     ServerResponse getProduct();
 
-    ServerResponse addProduct(Product product);
+
 
     ServerResponse updateProduct(Product product);
+
+    ServerResponse addProduct(Product product, String property, String sku);
 }

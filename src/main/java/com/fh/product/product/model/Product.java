@@ -15,8 +15,8 @@ public class Product {
     private String productName;//  名称
     private String productTitle;//  标题
     private Integer productBrandId;//  品牌id
-    private Integer productTypeid;// 分类
-    private String productDecs;//  商品介绍
+    private Integer productTypeId;// 分类
+    private String productDesc;//  商品介绍
     private BigDecimal productPrice;//   价格
     private Integer productStocks;//  库存
     private Integer productSortNum;//  排许
@@ -29,7 +29,6 @@ public class Product {
     private Date productUpdateDate;//
     private String productAuthor;//
     private Integer productIsDel;//  是否删除
-
 
     public Integer getProductId() {
         return productId;
@@ -63,20 +62,20 @@ public class Product {
         this.productBrandId = productBrandId;
     }
 
-    public Integer getProductTypeid() {
-        return productTypeid;
+    public Integer getProductTypeId() {
+        return productTypeId;
     }
 
-    public void setProductTypeid(Integer productTypeid) {
-        this.productTypeid = productTypeid;
+    public void setProductTypeId(Integer productTypeId) {
+        this.productTypeId = productTypeId;
     }
 
-    public String getProductDecs() {
-        return productDecs;
+    public String getProductDesc() {
+        return productDesc;
     }
 
-    public void setProductDecs(String productDecs) {
-        this.productDecs = productDecs;
+    public void setProductDesc(String productDesc) {
+        this.productDesc = productDesc;
     }
 
     public BigDecimal getProductPrice() {

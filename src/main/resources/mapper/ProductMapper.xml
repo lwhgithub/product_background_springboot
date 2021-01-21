@@ -10,9 +10,9 @@
     <select id="getProduct" resultType="com.fh.product.product.model.Product">
         select * from t_product where productIsDel = 1;
     </select>
-    <insert id="addProduct" parameterType="com.fh.product.product.model.Product">
-        insert into from t_product (productName,productTitle,productBrandId,productTypeid,productDecs,productPrice,productStocks,productSortNum,productImgPath,productCreateDate,productUpdateDate,productAuthor,productIsDel)
-                        values (#{productName},#{productTitle},#{productBrandId},#{productTypeid},#{productDecs},#{productPrice},#{productStocks},#{productSortNum},#{productImgPath},#{productCreateDate},#{productUpdateDate},#{productAuthor},#{productIsDel})
+    <insert id="addProduct" parameterType="com.fh.product.product.model.Product" keyProperty="productId" useGeneratedKeys="true">
+        insert into t_product (productName,productTitle,productBrandId,productTypeId,productDesc,productPrice,productStocks,productSortNum,productImgPath,productCreateDate,productUpdateDate,productAuthor,productIsDel)
+                        values (#{productName},#{productTitle},#{productBrandId},#{productTypeId},#{productDesc},#{productPrice},#{productStocks},#{productSortNum},#{productImgPath},#{productCreateDate},#{productUpdateDate},#{productAuthor},#{productIsDel})
     </insert>
     <update id="updateProduct" parameterType="com.fh.product.product.model.Product">
         update t_product set

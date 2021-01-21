@@ -2,6 +2,8 @@ package com.fh.product.product.mapper;
 
 import com.fh.product.brand.model.Brand;
 import com.fh.product.product.model.Product;
+import com.fh.product.product.model.ProductPropertyPrice;
+import org.apache.ibatis.annotations.Insert;
 
 import java.util.List;
 
@@ -14,7 +16,10 @@ public interface ProductMapper {
 
     List<Product> getProduct();
 
-    void addProduct(Product product);
+    int addProduct(Product product);
 
     void updateProduct(Product product);
+    @Insert("<script>insert into product_property_price (productId,productProperty,productStocks,productPrice) " +
+            "values <foreach collection='list' item='a' separator=','> ( #{a.productId},#{a.productProperty},#{a.productStocks},#{a.productPrice} )  </foreach> </script>")
+    void addProductProperty(List<ProductPropertyPrice> adList);
 }

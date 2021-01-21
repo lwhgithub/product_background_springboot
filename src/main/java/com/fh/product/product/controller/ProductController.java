@@ -29,8 +29,8 @@ public class ProductController {
     }
 
     @PostMapping("addProduct")
-    public ServerResponse addProduct(Product product){
-        return productService.addProduct(product);
+    public ServerResponse addProduct(Product product,String property,String sku){
+        return  productService.addProduct(product,property,sku);
     }
     @PutMapping("updateProduct")
     public ServerResponse updateProduct(Product product){
