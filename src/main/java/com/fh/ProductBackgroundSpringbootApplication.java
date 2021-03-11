@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.fh.*.*.mapper")
+@MapperScan("com.fh.*.mapper")
 public class ProductBackgroundSpringbootApplication {
 
     public static void main(String[] args) {

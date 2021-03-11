@@ -42,7 +42,7 @@ public class ExportUtil {
         response.setHeader("Content-Disposition", "attachment;filename=" + fileName);
         //定义一个长度为4096的字节数组
         byte[] bytes = new byte[4096];
-        //先读他个4096字节
+        //先读4096字节
         int read = bis.read(bytes);
         while(read > 0){
             bos.write(bytes,0,read);

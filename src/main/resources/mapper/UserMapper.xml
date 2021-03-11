@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+	例如namespace="com.szh.mapper.personMapper"就是com.szh.mapper(包名)+personMapper(personMapper.xml文件去除后缀) -->
+<!--        keyProperty="id" useGeneratedKeys="true"   添加后返回id-->
+<mapper namespace="com.fh.user.mapper.UserMapper">
+    <select id="queryUserName" parameterType="com.fh.user.model.User" resultType="com.fh.user.model.User">
+        select * from t_user where userName = #{userName}
+    </select>
+    <insert id="addregister" parameterType="com.fh.user.model.User" >
+        insert into t_user (userName,userRealName,userPassword,userSex,userPhone,userEmail,userIdCard,userBirthday,userImgUrl,userEduId,userDeptId,userCreateDate)
+                            values (#{userName},#{userRealName},#{userPassword},#{userSex},#{userPhone},#{userEmail},#{userIdCard},#{userBirthday},#{userImgUrl},#{userEduId},#{userDeptId},#{userCreateDate});
+    </insert>
+
+
+
+<!--    <select id="getDatacount" parameterType="com.fh.product.brand.model.Brand" resultType="long">-->
+<!--        select count(*) from product_brand where brandisdel=1;-->
+
+<!--    </select>-->
+<!--    <update id="update" parameterType="com.fh.product.brand.model.Brand" >-->
+<!--        update product_brand set brandname=#{brandname},brandE=#{brandE},brandimgpath=#{brandimgpath},brandDesc=#{brandDesc},brandord=#{brandord},brandisdel=#{brandisdel},brandupdateDate=#{brandupdateDate},brandauthor=#{brandauthor}-->
+<!--        where brandid=#{brandid}-->
+<!--    </update>-->
+<!--    <sql id="sql">-->
+<!--        <where>-->
+<!--                <if test="brandname!='' and brandname!=null ">-->
+<!--                    probr.brandname like concat('%',#{brandname},'%')-->
+<!--                </if>-->
+<!--                <if test="brandisdel !=''">-->
+<!--                  and  probr.brandisdel=1-->
+<!--                </if>-->
+<!--        </where>-->
+<!--    </sql>-->
+
+
+</mapper>

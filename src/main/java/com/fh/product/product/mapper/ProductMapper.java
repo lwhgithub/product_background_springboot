@@ -26,5 +26,4 @@ public interface ProductMapper {
     void addProductProperty(List<ProductPropertyPrice> adList);
 
 
-
 }

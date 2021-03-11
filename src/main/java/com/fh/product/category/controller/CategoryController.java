@@ -13,7 +13,6 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("api/type/")
-@CrossOrigin
 public class CategoryController {
     @Resource
     private CategoryServer categoryServer;

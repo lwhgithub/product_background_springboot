@@ -7,7 +7,8 @@ package com.fh.common;
 public enum ServerEnum {
     SUCCESS(110,"成功"),
     ERROR(120,"失败"),
-    ERROE_LOGIN(2000,"登录错误,请重新登录")
+    ERROE_LOGIN(2000,"登录错误,请重新登录"),
+    NO_LOGIN(2001,"没有登录,请重新登录")
     ;
     private Integer code;
     private String message;

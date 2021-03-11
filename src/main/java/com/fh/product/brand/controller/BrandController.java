@@ -1,5 +1,6 @@
 package com.fh.product.brand.controller;
 
+import com.fh.Interceptor.LoginRequired;
 import com.fh.common.ServerResponse;
 import com.fh.product.brand.model.Brand;
 import com.fh.product.brand.service.BrandService;
@@ -35,7 +36,7 @@ public class BrandController {
         return brandService.update(brand);
     }
     @RequestMapping("uploadFile")
-    @CrossOrigin
+    @LoginRequired
     public ServerResponse importPhoto(MultipartFile file){
         return OssUtil.uploadFile(file);
     }

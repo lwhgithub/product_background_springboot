@@ -62,7 +62,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ServerResponse addProduct(Product product, String property, String sku) {
-//返回主键 keyProperty="id" useGeneratedKeys="true"
+        //返回主键 keyProperty="id" useGeneratedKeys="true"
         product.setProductAuthor("admin");
         product.setProductIsDel(1);
         product.setProductCreateDate(new Date());

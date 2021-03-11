@@ -24,6 +24,9 @@ public class ServerResponse {
     public static ServerResponse error_login(){
         return new ServerResponse(ServerEnum.ERROE_LOGIN.getCode(),null, ServerEnum.ERROE_LOGIN.getMessage());
     }
+    public static ServerResponse no_login(){
+        return new ServerResponse(ServerEnum.ERROE_LOGIN.getCode(),null, ServerEnum.NO_LOGIN.getMessage());
+    }
 
 
     @Override
